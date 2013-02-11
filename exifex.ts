@@ -30,15 +30,18 @@ module com.drikin.ExifEx {
         return output_string;
     }
 
-    var flickr_imgs = flickrex.getAllFlickrImageObjects();
+    // start from here
+    $(document).ready(() => {
+        var flickr_imgs = flickrex.getAllFlickrImageObjects();
 
-    for (var i = 0, l = flickr_imgs.length; i < l; i++) {
-        (function(){
-            var flickr_img = flickr_imgs[i];
-            flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
-                var p = $("<p class='flickr-exif'>" + makeExifString(exif_data) + "</p>");
-                $(flickr_img.node).after(p);
-            });
-        })();
-    }
+        for (var i = 0, l = flickr_imgs.length; i < l; i++) {
+            (function(){
+                var flickr_img = flickr_imgs[i];
+                flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
+                    var p = $("<p class='flickr-exif'>" + makeExifString(exif_data) + "</p>");
+                    $(flickr_img.node).after(p);
+                });
+            })();
+        }
+    });
 }
