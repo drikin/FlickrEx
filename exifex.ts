@@ -48,7 +48,7 @@ module com.drikin.ExifEx {
                 flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
                     var exif_string = makeExifString(exif_data);
                     if (exif_string) {
-                        var p = $("<p class='flickr-exif'>" + exif_string + "</p>");
+                        var p = $("<div class='flickr-exif'>" + exif_string + "</div>");
                         $(flickr_img.node).after(p);
                     }
                 });
