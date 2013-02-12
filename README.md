@@ -21,6 +21,8 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
 <script type="text/javascript" src="//github.com/drikin/FlickrEx/raw/stable/exifex.min.js"></script>
 ```
 
+注) 上記テンプレートは一見グローバル変数を利用しているように見えますが、実際にはFlickrExのスクリプト内でネームスコープを変更しているのでグローバル変数が残ることはありません。テンプレートの見た目を優先して上記のような仕様にしました。
+
 ## ExifEXのカスタマイズ
 
 付加するExif情報は上記テンプレートのFLICKR_EXIF_FORMATパラメータをカスタマイズすることで簡単にカスタマイズすることができます。
