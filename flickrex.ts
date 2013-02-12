@@ -71,8 +71,8 @@ module com.drikin.FlickrEx {
             return obj;
         } // }}}
 
-        public getAllFlickrImageObjects() {
-            var imgs = jQuery('img').filter(function(idx) {
+        public getAllFlickrImageObjects(target_id?: string = '') {
+            var imgs = jQuery(target_id + ' img').filter(function(idx) {
                 var src_str = $(this).attr('src');
                 return src_str&&src_str.match(/staticflickr.com/);
             });
