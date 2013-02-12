@@ -18,8 +18,8 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
     //var FLICKREX_EXIF_JQUERY_SELECTOR = "#content";
 </script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="flickrex.js"></script>
-<script type="text/javascript" src="exifex.js"></script>
+<script src="//github.com/drikin/FlickrEx/raw/stable/flickrex.js"></script>
+<script src="//github.com/drikin/FlickrEx/raw/stable/exifex.js"></script>
 ```
 
 注) 上記テンプレートは一見グローバル変数を利用しているように見えますが、実際にはFlickrExのスクリプト内でネームスコープを変更しているのでグローバル変数が残ることはありません。テンプレートの見た目を優先して上記のような仕様にしました。
