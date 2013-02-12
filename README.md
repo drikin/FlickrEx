@@ -17,7 +17,7 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
     //var FLICKREX_EXIF_FORMAT = "%camera% / %Focal Length% / f/%aperture% / ISO %ISO Speed% / %Exposure% sec / %Exposure Bias% EV / %Software%";
     //var FLICKREX_EXIF_JQUERY_SELECTOR = "#content";
 </script>
-<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="//github.com/drikin/FlickrEx/raw/stable/flickrex.js"></script>
 <script src="//github.com/drikin/FlickrEx/raw/stable/exifex.js"></script>
 ```
