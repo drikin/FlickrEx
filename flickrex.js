@@ -7,9 +7,9 @@ var com;
                     this.api_key = "18c9f79a96fd34c3b3f16a93fb0a5d3c";
                     this.api_type = "json&nojsoncallback=1";
                     this.base_url = "http://api.flickr.com/services/rest/?";
-                    if(window.FLICKR_API_KEY !== undefined) {
-                        this.api_key = window.FLICKR_API_KEY;
-                        delete window.FLICKR_API_KEY;
+                    if(window.FLICKREX_API_KEY !== undefined) {
+                        this.api_key = window.FLICKREX_API_KEY;
+                        delete window.FLICKREX_API_KEY;
                     }
                     this.base_url = this.appendURLParams({
                         api_key: this.api_key
@@ -61,9 +61,9 @@ var com;
                     };
                     return obj;
                 };
-                Base.prototype.getAllFlickrImageObjects = function (target_id) {
-                    if (typeof target_id === "undefined") { target_id = ''; }
-                    var imgs = jQuery(target_id + ' img').filter(function (idx) {
+                Base.prototype.getAllFlickrImageObjects = function (jquery_selector) {
+                    if (typeof jquery_selector === "undefined") { jquery_selector = 'img'; }
+                    var imgs = jQuery(jquery_selector).filter(function (idx) {
                         var src_str = $(this).attr('src');
                         return src_str && src_str.match(/staticflickr.com/);
                     });

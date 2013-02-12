@@ -4,14 +4,14 @@ var com;
         (function (ExifEx) {
             var flickrex = new com.drikin.FlickrEx.Base();
             var exif_format = "%camera% %Focal Length% f/%aperture% ISO %ISO Speed% %Exposure% sec";
-            var exif_target_id = '';
-            if(window.FLICKR_EXIF_FORMAT !== undefined) {
-                exif_format = window.FLICKR_EXIF_FORMAT;
-                delete window.FLICKR_EXIF_FORMAT;
+            var exif_jquery_selector = 'img';
+            if(window.FLICKREX_EXIF_FORMAT !== undefined) {
+                exif_format = window.FLICKREX_EXIF_FORMAT;
+                delete window.FLICKREX_EXIF_FORMAT;
             }
-            if(window.FLICKR_EXIF_TARGET_ID_NAME !== undefined) {
-                exif_target_id = "#" + window.FLICKR_EXIF_TARGET_ID_NAME;
-                delete window.FLICKR_EXIF_TARGET_ID_NAME;
+            if(window.FLICKREX_EXIF_JQUERY_SELECTOR !== undefined) {
+                exif_jquery_selector = window.FLICKREX_EXIF_JQUERY_SELECTOR;
+                delete window.FLICKREX_EXIF_JQUERY_SELECTOR;
             }
             function makeExifString(exif_data) {
                 var exif_params = exif_format.match(/%[\w ]*%/gi);
@@ -37,7 +37,7 @@ var com;
                 return output_string;
             }
             $(document).ready(function () {
-                var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_target_id);
+                var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
                 for(var i = 0, l = flickr_imgs.length; i < l; i++) {
                     (function () {
                         var flickr_img = flickr_imgs[i];
