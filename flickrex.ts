@@ -20,9 +20,9 @@ module com.drikin.FlickrEx {
         base_url: string = "http://api.flickr.com/services/rest/?";
 
         constructor() {
-            if (window.FLICKR_API_KEY !== undefined) {
-                this.api_key = window.FLICKR_API_KEY;
-                delete window.FLICKR_API_KEY;
+            if (window.FLICKREX_API_KEY !== undefined) {
+                this.api_key = window.FLICKREX_API_KEY;
+                delete window.FLICKREX_API_KEY;
             }
             this.base_url = this.appendURLParams({api_key: this.api_key});
             this.base_url = this.appendURLParams({format: this.api_type});
@@ -76,8 +76,8 @@ module com.drikin.FlickrEx {
             return obj;
         } // }}}
 
-        public getAllFlickrImageObjects(target_id?: string = '') {
-            var imgs = jQuery(target_id + ' img').filter(function(idx) {
+        public getAllFlickrImageObjects(jquery_selector?: string = 'img') {
+            var imgs = jQuery(jquery_selector).filter(function(idx) {
                 var src_str = $(this).attr('src');
                 return src_str&&src_str.match(/staticflickr.com/);
             });
