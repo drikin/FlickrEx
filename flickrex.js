@@ -42,7 +42,12 @@ var com;
                     var id = url_last_components.slice(0, 1)[0];
                     var secret = url_last_components.slice(1, 2)[0];
                     var secret = url_last_components.slice(1, 2)[0];
-                    var size = url_last_components.slice(2, 3)[0].split('.').slice(0, 1)[0];
+                    var size_info = url_last_components.slice(2, 3);
+                    if(size_info.length) {
+                        var size = size_info.length && size_info[0].split('.').slice(0, 1)[0];
+                    } else {
+                        var size = '';
+                    }
                     var file_ext = url_elems.slice(-1)[0].split('.').slice(-1)[0];
                     var obj = {
                         node: node,
