@@ -56,8 +56,9 @@ var com;
                     };
                     return obj;
                 };
-                Base.prototype.getAllFlickrImageObjects = function () {
-                    var imgs = jQuery('img').filter(function (idx) {
+                Base.prototype.getAllFlickrImageObjects = function (target_id) {
+                    if (typeof target_id === "undefined") { target_id = ''; }
+                    var imgs = jQuery(target_id + ' img').filter(function (idx) {
                         var src_str = $(this).attr('src');
                         return src_str && src_str.match(/staticflickr.com/);
                     });
