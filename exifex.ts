@@ -20,13 +20,21 @@ module com.drikin.ExifEx {
             var label = exif_params[pi].replace(/%/g, '');
             for (var ei = 0, el = exif.length; ei < el; ei++) {
                 if (label.toLowerCase() === 'camera') {
-                    output_string = output_string.replace('%' + label + '%', exif_data.photo.camera);
+                    if (exif_data.photo.camera) {
+                        output_string = output_string.replace('%' + label + '%', exif_data.photo.camera);
+                    }
                 }
                 if (label.toLowerCase() === exif[ei].label.toLowerCase()) {
                     output_string = output_string.replace('%' + label + '%', exif[ei].raw._content);
                 }
             }
         }
+        // clear Exif info if it is empty
+        if (output_string === exif_format) {
+            output_string = null;
+        }
+        // replace non exsisting Exif infos
+        output_string = output_string.replace(/%[\w ]*%/ig, '-');
         return output_string;
     }
 
@@ -38,8 +46,11 @@ module com.drikin.ExifEx {
             (function(){
                 var flickr_img = flickr_imgs[i];
                 flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
-                    var p = $("<p class='flickr-exif'>" + makeExifString(exif_data) + "</p>");
-                    $(flickr_img.node).after(p);
+                    var exif_string = makeExifString(exif_data);
+                    if (exif_string) {
+                        var p = $("<p class='flickr-exif'>" + exif_string + "</p>");
+                        $(flickr_img.node).after(p);
+                    }
                 });
             })();
         }
