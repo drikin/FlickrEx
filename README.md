@@ -1,15 +1,13 @@
 FlickrEx
 ========
 
-FlickrExは、ブログなどWebページに貼られたFlickr画像に対して機能を拡張するJavaScriptです。
-下記のテンプレートをコピペして自分のブログに貼り付けるだけで簡単に利用することができます。
+FlickrEx is a JavaScript library making it possible easily to add additional information onto your flickr images submitted in your blog articles and web site. Just copy & paste HTML code below in your blog/web site and it works magically.
 
-FlickrEx自体はプラグイン的に必要な機能を選んで利用することを考えていますが、
-現在はFlickr画像にExif情報を付加するExifExのみ利用可能です。
+I'm considering FlickrEx should be pluggable and used with the features you just need. Currenlty, you can use only ExifEx, which will add Exif information to your Flickr images.
 
-## 使い方
+## Usage
 
-使い方は、下記のHTMLコードをコピーしてご自分のサイトに貼り付けるだけで利用できます。
+You can just copy & paste HTML code below in your blog/web site and it should work.
 
 ```HTML
 <script type="text/javascript">
@@ -22,14 +20,14 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
 <script src="//github.com/drikin/FlickrEx/raw/stable/exifex.min.js"></script>
 ```
 
-注) 上記テンプレートは一見グローバル変数を利用しているように見えますが、実際にはFlickrExのスクリプト内でネームスコープを変更しているのでグローバル変数が残ることはありません。テンプレートの見た目を優先して上記のような仕様にしました。
+NOTE: Seemingly, this code is using global variables. However, inside FlickrEx javascript code, these variables' namescope is correctly modified, so that these global variables won't violate other stuff at all. It makes the snippet code more clean.
 
-## ExifEXのカスタマイズ
+## Customize ExifEx configuration
 
-付加するExif情報は上記テンプレートのFLICKR_EXIF_FORMATパラメータをカスタマイズすることで簡単にカスタマイズすることができます。
-下記の%Label%で指定されたキーワードが実際のExif情報で置換されます。
+You can easily customize Exif information added to each Flickr image by modifying FLICKR_EXIF_FORMAT parameter in the snippet code above.
+The keywords below, like the format %Label% will be replaced with the actual Exif data of each Flickr image.
 
-### ExifExで利用可能なキーワード
+### Keywords for ExifEx
 - %camera%
 - %Make%
 - %Model%
