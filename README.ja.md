@@ -67,3 +67,12 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
 
 See more detail
 > http://www.flickr.com/services/api/explore/flickr.photos.getExif
+
+### Developer
+
+ソースはsrcフォルダに置いてあります。ソースの編集後、以下のコマンドを使ってjsをコンパイル出来ます。なお、開発環境にNodeJSがあることを前提にしています。
+
+```bash
+npm install closure-compiler # 初回のみ
+./build.js # converts js -> min.js
+```

@@ -65,3 +65,12 @@ The keywords below, like the format %Label% will be replaced with the actual Exi
 
 See more detail
 > http://www.flickr.com/services/api/explore/flickr.photos.getExif
+
+### Developer
+
+Source is under src folder. Use the following to edit and compile the minified files. This assumes your developement environment has NodeJS installed.
+
+```bash
+npm install closure-compiler # run this the first time
+./build.js # converts js -> min.js
+```
