@@ -1,9 +1,9 @@
-.flickr2tag-img {
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-}
 .flickr-exif-icon {
+    position: absolute;
+    bottom: 20px;
+    text-decoration: none;
+}
+.flickr-exif-icon-block {
     position: absolute;
     display: inline-block;
     color: white;

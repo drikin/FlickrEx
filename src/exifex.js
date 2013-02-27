@@ -36,12 +36,28 @@ var com;
                 output_string = output_string.replace(/%[\w ]*%/gi, '-');
                 return output_string;
             }
+            var flickr_imgs_subs = [];
+            var exif_data_subs = [];
+            function subscribeFlickrImgs(flickr_imgs_cb) {
+                flickr_imgs_subs.push(flickr_imgs_cb);
+            }
+            ExifEx.subscribeFlickrImgs = subscribeFlickrImgs;
+            function subscribeExifData(flickr_imgs_cb) {
+                exif_data_subs.push(flickr_imgs_cb);
+            }
+            ExifEx.subscribeExifData = subscribeExifData;
             $(document).ready(function () {
                 var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
+                for(var i = 0; i < flickr_imgs_subs.length; i++) {
+                    flickr_imgs_subs[i](flickr_imgs);
+                }
                 for(var i = 0, l = flickr_imgs.length; i < l; i++) {
                     (function () {
                         var flickr_img = flickr_imgs[i];
                         flickrex.getExif(flickr_imgs[i].id, function (exif_data) {
+                            for(var j = 0; j < exif_data_subs.length; j++) {
+                                exif_data_subs[j](flickr_img, exif_data);
+                            }
                             var exif_string = makeExifString(exif_data);
                             if(exif_string) {
                                 var p = $("<div class='flickr-exif'>" + exif_string + "</div>");
@@ -53,6 +69,8 @@ var com;
             });
         })(drikin.ExifEx || (drikin.ExifEx = {}));
         var ExifEx = drikin.ExifEx;
+
     })(com.drikin || (com.drikin = {}));
     var drikin = com.drikin;
+
 })(com || (com = {}));
