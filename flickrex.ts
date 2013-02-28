@@ -79,7 +79,7 @@ module com.drikin.FlickrEx {
         public getAllFlickrImageObjects(jquery_selector?: string = 'img') {
             var imgs = $(jquery_selector).filter(function(idx) {
                 var src_str = $(this).attr('src');
-                return src_str&&src_str.match(/staticflickr.com/);
+                return src_str&&src_str.match(/static.?flickr.com/);
             });
             var objs = [];
             for (var i = 0, l = imgs.length; i < l; i++) {
