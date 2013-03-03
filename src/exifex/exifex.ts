@@ -1,5 +1,5 @@
-/// <reference path="jquery.d.ts" />
-/// <reference path="flickrex" />
+/// <reference path="../../typings/jquery.d.ts" />
+/// <reference path="../flickrex/flickrex" />
 
 module com.drikin.ExifEx {
     declare var window: any;

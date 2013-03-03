@@ -1,4 +1,4 @@
-/// <reference path="jquery.d.ts" />
+/// <reference path="../../typings/jquery.d.ts" />
 
 module com.drikin.FlickrEx {
     declare var window: any;
