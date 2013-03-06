@@ -68,9 +68,8 @@ See more detail
 
 ### Developer
 
-Source is under src folder. Use the following to edit and compile the minified files. This assumes your developement environment has NodeJS installed.
+Use provided script to compile and minify the script
 
 ```bash
-npm install closure-compiler # run this the first time
-./build.js # converts js -> min.js
+./build.sh
 ```

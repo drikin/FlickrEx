@@ -1,5 +1,5 @@
 /// <reference path="jquery.d.ts" />
-/// <reference path="exifex" />
+/// <reference path="../exifex/exifex" />
 
 module com.teruhisa.ExifIconEx {
 

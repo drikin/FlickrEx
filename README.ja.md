@@ -70,9 +70,7 @@ See more detail
 
 ### Developer
 
-ソースはsrcフォルダに置いてあります。ソースの編集後、以下のコマンドを使ってjsをコンパイル出来ます。なお、開発環境にNodeJSがあることを前提にしています。
 
 ```bash
-npm install closure-compiler # 初回のみ
-./build.js # converts js -> min.js
+./build.sh
 ```
