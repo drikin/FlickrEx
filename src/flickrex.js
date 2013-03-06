@@ -26,7 +26,7 @@ var com;
                     return return_url;
                 };
                 Base.prototype.getJsonResult = function (request_url, callback) {
-                    jQuery.ajax(request_url, {
+                    $.ajax(request_url, {
                         success: function (data) {
                             callback(data);
                         },
@@ -63,9 +63,9 @@ var com;
                 };
                 Base.prototype.getAllFlickrImageObjects = function (jquery_selector) {
                     if (typeof jquery_selector === "undefined") { jquery_selector = 'img'; }
-                    var imgs = jQuery(jquery_selector).filter(function (idx) {
+                    var imgs = $(jquery_selector).filter(function (idx) {
                         var src_str = $(this).attr('src');
-                        return src_str && src_str.match(/staticflickr.com/);
+                        return src_str && src_str.match(/static.?flickr.com/);
                     });
                     var objs = [];
                     for(var i = 0, l = imgs.length; i < l; i++) {
