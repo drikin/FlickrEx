@@ -1,3 +1,8 @@
+.flickr-exif-container {
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
 .flickr-exif-icon {
     position: absolute;
     bottom: 20px;
