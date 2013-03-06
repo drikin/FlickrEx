@@ -157,6 +157,7 @@ var com;
                 if(exif_string) {
                     var p = $("<div class='" + container_class + "' style='width:" + flickr_img.node.width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
                     $(flickr_img.node).after(p);
+                    $(flickr_img.node).parent().addClass('flickr-exif-container');
                 }
             }
             ;
