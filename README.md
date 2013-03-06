@@ -65,3 +65,11 @@ The keywords below, like the format %Label% will be replaced with the actual Exi
 
 See more detail
 > http://www.flickr.com/services/api/explore/flickr.photos.getExif
+
+### Developer
+
+Use provided script to compile and minify the script
+
+```bash
+./build.sh
+```
