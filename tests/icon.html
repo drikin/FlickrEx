@@ -2,7 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>FlickrEx Test</title>
+    <link rel="stylesheet" type="text/css" href="../assets/skins/dark/dark.css">
     <style type="text/css">
+        .flickr2tag-img {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
         .flickr-exif {
             font-size: small;
             margin: 0;
@@ -28,11 +34,10 @@
 
     <script type="text/javascript">
         var FLICKREX_API_KEY = "18c9f79a96fd34c3b3f16a93fb0a5d3c";
-        var FLICKREX_EXIF_FORMAT = "%camera% / %Focal Length% / f/%aperture% / ISO %ISO Speed% / %Exposure% sec / %Exposure Bias% EV / %Software%";
         var FLICKREX_EXIF_JQUERY_SELECTOR = ".flickr2tag-img img";
     </script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../flickrex.js"></script>
-    <script type="text/javascript" src="../exifex.js"></script>
+    <script type="text/javascript" src="../exificonex.js"></script>
 </body>
 </html>

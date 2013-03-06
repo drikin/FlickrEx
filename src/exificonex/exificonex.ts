@@ -2,6 +2,15 @@
 /// <reference path="../exifex/exifex" />
 
 module com.teruhisa.ExifIconEx {
+    declare var window: any;
+
+    var flickrex = new com.drikin.FlickrEx.Base();
+    var exif_jquery_selector = 'img';
+
+    if (window.FLICKREX_EXIF_JQUERY_SELECTOR !== undefined) {
+        exif_jquery_selector = window.FLICKREX_EXIF_JQUERY_SELECTOR;
+        delete window.FLICKREX_EXIF_JQUERY_SELECTOR;
+    }
 
     var partial_map = {".":"dot"};
     var container_class = 'flickr-exif-icon';
@@ -104,8 +113,22 @@ module com.teruhisa.ExifIconEx {
         'iso speed': ExifISO
     };
 
+    // start from here
+    $(document).ready(() => {
+        var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
+
+        for (var i = 0, l = flickr_imgs.length; i < l; i++) {
+            (function(){
+                var flickr_img = flickr_imgs[i];
+                flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
+                    generateIcon(flickr_img, exif_data);
+                });
+            })();
+        }
+    });
+
     // wait for data from exifex to populate
-    com.drikin.ExifEx.subscribeExifData(function(flickr_img, exif_data) {
+    function generateIcon(flickr_img, exif_data) {
         var exif = exif_data.photo.exif;
         var exif_string = "";
         var exif_blocks = [];
@@ -134,7 +157,6 @@ module com.teruhisa.ExifIconEx {
             var p = $("<div class='" + container_class + "' style='width:" + flickr_img.node.width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
             $(flickr_img.node).after(p);
         }
-
-    });
+    };
 
 }

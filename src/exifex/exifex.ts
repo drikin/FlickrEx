@@ -45,32 +45,14 @@ module com.drikin.ExifEx {
         return output_string;
     }
 
-    var flickr_imgs_subs = [];
-    var exif_data_subs = [];
-
-    export function subscribeFlickrImgs(flickr_imgs_cb: Function) {
-        flickr_imgs_subs.push(flickr_imgs_cb);
-    }
-
-    export function subscribeExifData(flickr_imgs_cb: Function) {
-        exif_data_subs.push(flickr_imgs_cb);
-    }
-
     // start from here
     $(document).ready(() => {
         var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
-
-        for (var i = 0; i < flickr_imgs_subs.length; i++) {
-            flickr_imgs_subs[i](flickr_imgs);
-        }
 
         for (var i = 0, l = flickr_imgs.length; i < l; i++) {
             (function(){
                 var flickr_img = flickr_imgs[i];
                 flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
-                    for (var j = 0; j < exif_data_subs.length; j++) {
-                        exif_data_subs[j](flickr_img, exif_data);
-                    }
                     var exif_string = makeExifString(exif_data);
                     if (exif_string) {
                         var p = $("<div class='flickr-exif'>" + exif_string + "</div>");
