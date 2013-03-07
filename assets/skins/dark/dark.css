@@ -12,7 +12,7 @@
     position: absolute;
     display: inline-block;
     color: white;
-    background: url(./exif.png) no-repeat;
+    background: url(exif.png) no-repeat;
     display: inline-block;
     width: 63px;
     height: 72px;
@@ -30,7 +30,7 @@
     text-align: left;
 }
 .flickr-exif-icon-text {
-    background: url(./number.png) no-repeat;
+    background: url(number.png) no-repeat;
     width: 14px;
     height: 22px;
     display: inline-block;
@@ -76,7 +76,7 @@
     height: 18px;
 }
 .flickr-exif-icon-text-frac {
-    background: url(./number.png) no-repeat;
+    background: url(number.png) no-repeat;
     width: 8px;
     height: 17px;
     display: inline-block;
@@ -128,7 +128,7 @@
     height: 17px;
 }
 .flickr-exif-icon-text-high {
-    background: url(./number.png) no-repeat;
+    background: url(number.png) no-repeat;
     width: 10px;
     height: 17px;
     display: inline-block;
