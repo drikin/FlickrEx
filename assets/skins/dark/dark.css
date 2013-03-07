@@ -13,7 +13,6 @@
     display: inline-block;
     color: white;
     background: url(exif.png) no-repeat;
-    display: inline-block;
     width: 63px;
     height: 72px;
     bottom: 20px;
@@ -23,6 +22,7 @@
 }
 .flickr-exif-icon-fnumber {
     margin: 9px 2px 0;
+    height: 22px;
 }
 .flickr-exif-icon-label {
     display: inline-block;

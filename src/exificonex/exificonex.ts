@@ -154,7 +154,15 @@ module com.teruhisa.ExifIconEx {
             }
         }
         if (exif_string) {
-            var p = $("<div class='" + container_class + "' style='width:" + flickr_img.node.width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
+            var _node = $(flickr_img.node);
+            var width = _node.width() +
+                parseInt(_node.css('border-left-width'), 10) +
+                parseInt(_node.css('border-right-width'), 10) +
+                parseInt(_node.css('margin-left'), 10) +
+                parseInt(_node.css('margin-right'), 10) +
+                parseInt(_node.css('padding-left'), 10) +
+                parseInt(_node.css('padding-right'), 10);
+            var p = $("<div class='" + container_class + "' style='width:" + width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
             $(flickr_img.node).after(p);
             $(flickr_img.node).parent().addClass('flickr-exif-container');
         }
