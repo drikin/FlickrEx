@@ -91,6 +91,9 @@ var com;
             FlickrEx.Base = Base;            
         })(drikin.FlickrEx || (drikin.FlickrEx = {}));
         var FlickrEx = drikin.FlickrEx;
+
     })(com.drikin || (com.drikin = {}));
     var drikin = com.drikin;
+
 })(com || (com = {}));
+

@@ -163,7 +163,7 @@ module com.teruhisa.ExifIconEx {
                 parseInt(_node.css('padding-left'), 10) +
                 parseInt(_node.css('padding-right'), 10);
             var p = $("<div class='" + container_class + "' style='width:" + width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
-            $(flickr_img.node).after(p);
+            $(flickr_img.node).before(p);
             $(flickr_img.node).parent().addClass('flickr-exif-container');
         }
     };
