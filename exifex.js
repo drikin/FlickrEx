@@ -53,6 +53,9 @@ var com;
             });
         })(drikin.ExifEx || (drikin.ExifEx = {}));
         var ExifEx = drikin.ExifEx;
+
     })(com.drikin || (com.drikin = {}));
     var drikin = com.drikin;
+
 })(com || (com = {}));
+
