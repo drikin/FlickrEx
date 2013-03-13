@@ -22,7 +22,7 @@
 }
 .flickr-exif-icon-fnumber {
     margin: 9px 2px 0;
-    height: 22px;
+    height: 21px;
 }
 .flickr-exif-icon-label {
     display: inline-block;
@@ -32,7 +32,7 @@
 .flickr-exif-icon-text {
     background: url(number.png) no-repeat;
     width: 14px;
-    height: 22px;
+    height: 21px;
     display: inline-block;
     text-indent: -99999em;
     text-align: left;
@@ -73,7 +73,7 @@
 }
 .flickr-exif-icon-exposuretime {
     padding-right: 14px;
-    height: 18px;
+    height: 17px;
 }
 .flickr-exif-icon-text-frac {
     background: url(number.png) no-repeat;
@@ -87,7 +87,7 @@
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text {
     background-size: 110px;
     width: 9px;
-    height: 18px;
+    height: 17px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-0 {
     background-position: 0px;
@@ -96,28 +96,28 @@
     background-position: -10px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-2 {
-    background-position: -19px;
+    background-position: -20px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-3 {
-    background-position: -29px;
+    background-position: -30px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-4 {
-    background-position: -39px;
+    background-position: -40px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-5 {
-    background-position: -49px;
+    background-position: -50px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-6 {
-    background-position: -59px;
+    background-position: -60px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-7 {
-    background-position: -69px;
+    background-position: -70px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-8 {
-    background-position: -79px;
+    background-position: -80px;
 }
 .flickr-exif-icon-exposuretime .flickr-exif-icon-text-9 {
-    background-position: -89px;
+    background-position: -90px;
 }
 .flickr-exif-icon-iso {
     padding: 1px 5px;

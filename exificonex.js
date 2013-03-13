@@ -2,7 +2,7 @@ var __extends = this.__extends || function (d, b) {
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
-};
+}
 var com;
 (function (com) {
     (function (teruhisa) {
@@ -33,7 +33,10 @@ var com;
                     return '<' + tag + ' class="' + this.classPrefix + blockName + '">' + content + '</' + tag + '>';
                 };
                 ExifProperty.prototype.getHtmlBlocks = function () {
-                    var val = this.getValue(), partial, blocks = "";
+                    var val = this.getValue();
+                    var partial;
+                    var blocks = "";
+
                     if(val) {
                         for(var bi = 0; bi < val.length; bi++) {
                             partial = val[bi];
@@ -155,14 +158,19 @@ var com;
                     }
                 }
                 if(exif_string) {
-                    var p = $("<div class='" + container_class + "' style='width:" + flickr_img.node.width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
-                    $(flickr_img.node).after(p);
+                    var _node = $(flickr_img.node);
+                    var width = _node.width() + parseInt(_node.css('border-left-width'), 10) + parseInt(_node.css('border-right-width'), 10) + parseInt(_node.css('margin-left'), 10) + parseInt(_node.css('margin-right'), 10) + parseInt(_node.css('padding-left'), 10) + parseInt(_node.css('padding-right'), 10);
+                    var p = $("<div class='" + container_class + "' style='width:" + width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
+                    $(flickr_img.node).before(p);
                     $(flickr_img.node).parent().addClass('flickr-exif-container');
                 }
             }
-            ;
+            ; ;
         })(teruhisa.ExifIconEx || (teruhisa.ExifIconEx = {}));
         var ExifIconEx = teruhisa.ExifIconEx;
+
     })(com.teruhisa || (com.teruhisa = {}));
     var teruhisa = com.teruhisa;
+
 })(com || (com = {}));
+
