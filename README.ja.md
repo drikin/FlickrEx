@@ -67,3 +67,10 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
 
 See more detail
 > http://www.flickr.com/services/api/explore/flickr.photos.getExif
+
+### Developer
+
+
+```bash
+./build.sh
+```
