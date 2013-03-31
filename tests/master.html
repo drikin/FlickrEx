@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FlickrEx Test</title>
+    <style type="text/css">
+        .flickr-exif {
+            font-size: small;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body id='content'>
+
+    <p><img alt="medium" src="http://farm9.staticflickr.com/8089/8462132630_99c900c8f0.jpg" /></p>
+
+    <p><a class='flickr2tag-img' href='http://www.flickr.com/photo.gne?id=8461150438' title='_DSC0942'><img src='http://farm9.staticflickr.com/8526/8461150438_d2df43d4d2_m.jpg' alt='_DSC0942' /></a></p>
+
+    <p>
+    <img alt="non flickr img" src="http://blog.drikin.com/drikin_face.png" />
+    </p>
+
+    <p><a class='flickr2tag-img' href='http://www.flickr.com/photo.gne?id=8460051297' title='_DSC0947'><img src='http://farm9.static.flickr.com/8505/8460051297_31e82c02ac_m.jpg' alt='_DSC0947' /></a></p>
+
+    <p><a class='flickr2tag-img' href='http://www.flickr.com/photo.gne?id=8459752371' title='_SDI1560'><img alt='_SDI1560' src="hoge"/></a></p>
+
+    <p><a class='flickr2tag' href='http://www.flickr.com/photo.gne?id=8459752371' title='_SDI1560'><img src='http://farm9.staticflickr.com/8525/8459752371_2639039aae_m.jpg' alt='_SDI1560' /></a></p>
+
+    <script type="text/javascript">
+        var FLICKREX_API_KEY = "18c9f79a96fd34c3b3f16a93fb0a5d3c";
+        var FLICKREX_EXIF_FORMAT = "%camera% / %Focal Length% / f/%aperture% / ISO %ISO Speed% / %Exposure% sec / %Exposure Bias% EV / %Software%";
+        var FLICKREX_EXIF_JQUERY_SELECTOR = ".flickr2tag-img img";
+    </script>
+    <script>(window.jQuery && parseFloat(window.jQuery().jquery) > 1.5) || document.write('<script src="//flickrex.drikin.com/m/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="//flickrex.drikin.com/m/flickrex.js"></script>
+    <script type="text/javascript" src="//flickrex.drikin.com/m/exifex.js"></script>
+</body>
+</html>
