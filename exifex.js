@@ -14,7 +14,7 @@ var com;
                 delete window.FLICKREX_EXIF_JQUERY_SELECTOR;
             }
             function makeExifString(exif_data) {
-                var exif_params = exif_format.match(/%[\w ]*%/ig);
+                var exif_params = exif_format.match(/%[\w ]*%/gi);
                 var exif = exif_data.photo.exif;
                 var output_string = exif_format;
                 for(var pi = 0, pl = exif_params.length; pi < pl; pi++) {
@@ -33,7 +33,7 @@ var com;
                 if(output_string === exif_format) {
                     output_string = null;
                 }
-                output_string = output_string.replace(/%[\w ]*%/ig, '-');
+                output_string = output_string.replace(/%[\w ]*%/gi, '-');
                 return output_string;
             }
             $(document).ready(function () {
@@ -53,6 +53,9 @@ var com;
             });
         })(drikin.ExifEx || (drikin.ExifEx = {}));
         var ExifEx = drikin.ExifEx;
+
     })(com.drikin || (com.drikin = {}));
     var drikin = com.drikin;
+
 })(com || (com = {}));
+

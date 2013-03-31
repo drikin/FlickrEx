@@ -26,7 +26,7 @@ var com;
                     return return_url;
                 };
                 Base.prototype.getJsonResult = function (request_url, callback) {
-                    jQuery.ajax(request_url, {
+                    $.ajax(request_url, {
                         success: function (data) {
                             callback(data);
                         },
@@ -34,7 +34,7 @@ var com;
                     });
                 };
                 Base.prototype.parseFlickrImageURL = function (node) {
-                    var url_string = jQuery(node).attr('data-original') || jQuery(node).attr('src');
+                    var url_string = $(node).attr('data-original') || $(node).attr('src');
                     var url_elems = url_string.split('/');
                     var farm_id = url_elems[2].split('.').slice(0, 1)[0].replace('farm', '');
                     var server_id = url_elems[3];
@@ -63,9 +63,9 @@ var com;
                 };
                 Base.prototype.getAllFlickrImageObjects = function (jquery_selector) {
                     if (typeof jquery_selector === "undefined") { jquery_selector = 'img'; }
-                    var imgs = jQuery(jquery_selector).filter(function (idx) {
-                        var src_str = jQuery(this).attr('src');
-                        var lazy_src_str = jQuery(this).attr('data-original');
+                    var imgs = $(jquery_selector).filter(function (idx) {
+                        var src_str = $(this).attr('src');
+                        var lazy_src_str = $(this).attr('data-original');
                         return (src_str && src_str.match(/static.?flickr.com/) || lazy_src_str && lazy_src_str.match(/static.?flickr.com/));
                     });
                     var objs = [];
