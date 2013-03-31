@@ -2,7 +2,7 @@ var __extends = this.__extends || function (d, b) {
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
-}
+};
 var com;
 (function (com) {
     (function (teruhisa) {
@@ -33,10 +33,7 @@ var com;
                     return '<' + tag + ' class="' + this.classPrefix + blockName + '">' + content + '</' + tag + '>';
                 };
                 ExifProperty.prototype.getHtmlBlocks = function () {
-                    var val = this.getValue();
-                    var partial;
-                    var blocks = "";
-
+                    var val = this.getValue(), partial, blocks = "";
                     if(val) {
                         for(var bi = 0; bi < val.length; bi++) {
                             partial = val[bi];
@@ -165,12 +162,9 @@ var com;
                     $(flickr_img.node).parent().addClass('flickr-exif-container');
                 }
             }
-            ; ;
+            ;
         })(teruhisa.ExifIconEx || (teruhisa.ExifIconEx = {}));
         var ExifIconEx = teruhisa.ExifIconEx;
-
     })(com.teruhisa || (com.teruhisa = {}));
     var teruhisa = com.teruhisa;
-
 })(com || (com = {}));
-
