@@ -28,43 +28,54 @@ You can easily customize Exif information added to each Flickr image by modifyin
 The keywords below, like the format %Label% will be replaced with the actual Exif data of each Flickr image.
 
 ### Keywords for ExifEx
+
+Major keywords are below,
+
 - %camera%
 - %Make%
 - %Model%
-- %Orientation%
-- %Resolution Unit%
 - %Software%
-- %Date and Time (Modified)%
-- %Date and Time (Original)%
-- %Date and Time (Digitized)%
-- %White Point%
 - %Exposure%
 - %Aperture%
-- %Exposure Program%
 - %ISO Speed%
-- %Exif Version%
-- %Brightness Value%
-- %Exposure Bias%
-- %Max Aperture Value%
-- %Metering Mode%
-- %Light Source%
-- %Flash%
 - %Focal Length%
 - %Focal Length (35mm format)%
-- %Color Space%
-- %Exposure Mode%
-- %White Balance%
-- %Scene Capture Type%
-- %Contrast%
-- %Saturation%
-- %Sharpness%
-- %Lens Info%
-- %Lens Model%
-- %Lens%
-- %Gamma%
 
 See more detail
 > http://www.flickr.com/services/api/explore/flickr.photos.getExif
+
+### Customer Links
+
+- [Drift Diary XV](http://blog.drikin.com/)
+- [Drift Diary USA](http://weblog.drikin.com/)
+- [TATSUHIKO MIYAGAWA'S BLOG](http://weblog.bulknews.net/)
+- [substantial](http://blog.tksohishi.com/)
+- [shiology](http://shiology.com/)
+- [みたいもん](http://mitaimon.cocolog-nifty.com/)
+- [ShimoKen Works](http://www.shimoken-works.com/)
+- [B-log Cabin TP](http://minami.typepad.com/)
+- [ABlog](http://abworks.blog83.fc2.com/)
+- [Beauty and Insanity](http://blog.toshixvuk.net/)
+- [エアロプレイン](http://airoplane.net/)
+- [こんな感じで。](http://blog.kuruten.jp/bat)
+- [備忘録](http://blackuzume-memorandums.blogspot.com/)
+- [でこちく徒然日記](http://decol.in/)
+- [OM-D Style](http://blog.livedoor.jp/saga521-omd/)
+- [Creazy!](http://creazy.net/)
+- [むねさだブログ](http://munesada.com/)
+- [ゆっきぃ's Photo Diary](http://www.mzkpp.com/)
+- [always one step forward](http://masagrant55.hatenablog.com/)
+- [我楽](http://blog.garaku.cc/)
+- [不定期日記～ときどき書くよ](http://klipsch-soundman.blogspot.com/)
+- [jimixi blog](http://jiminynseries.seesaa.net/)
+- [まきこみ計画](http://www.cozymax.org/)
+- [モバイルねこ](http://nokapo.blog99.fc2.com/)
+- [ながるるままに](http://hk11419.com/)
+- [Hinemosu](http://www.hide10.com/)
+- [日常CandidPhoto](http://dailycandidphoto.blog.fc2.com/)
+- [どんふぁんドットコム](http://www.donfuan.com/)
+- [Another Dimension](http://anotherdimension.hatenablog.com/)
+
 
 ### Developer
 
