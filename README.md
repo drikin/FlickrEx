@@ -76,6 +76,7 @@ See more detail
 - [どんふぁんドットコム](http://www.donfuan.com/)
 - [Another Dimension](http://anotherdimension.hatenablog.com/)
 
+If you use FlickrEx on your site, please let me know. (drikin[at]gmail.com)
 
 ### Developer
 
