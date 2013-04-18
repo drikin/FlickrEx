@@ -34,7 +34,7 @@ var com;
                     });
                 };
                 Base.prototype.parseFlickrImageURL = function (node) {
-                    var url_string = jQuery(node).attr('data-original') || jQuery(node).attr('src');
+                    var url_string = jQuery(node).attr('data-original') || jQuery(node).attr('data-lazy-src') || jQuery(node).attr('src');
                     var url_elems = url_string.split('/');
                     var farm_id = url_elems[2].split('.').slice(0, 1)[0].replace('farm', '');
                     var server_id = url_elems[3];
@@ -65,8 +65,9 @@ var com;
                     if (typeof jquery_selector === "undefined") { jquery_selector = 'img'; }
                     var imgs = jQuery(jquery_selector).filter(function (idx) {
                         var src_str = jQuery(this).attr('src');
-                        var lazy_src_str = jQuery(this).attr('data-original');
-                        return (src_str && src_str.match(/static.?flickr.com/) || lazy_src_str && lazy_src_str.match(/static.?flickr.com/));
+                        var original_str = jQuery(this).attr('data-original');
+                        var lazy_src_str = jQuery(this).attr('data-lazy-src');
+                        return (src_str && src_str.match(/static.?flickr.com/) || original_str && original_str.match(/static.?flickr.com/) || lazy_src_str && lazy_src_str.match(/static.?flickr.com/));
                     });
                     var objs = [];
                     for(var i = 0, l = imgs.length; i < l; i++) {
