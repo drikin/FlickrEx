@@ -32,8 +32,9 @@ var com;
                 }
                 if(output_string === exif_format) {
                     output_string = null;
+                } else {
+                    output_string = output_string.replace(/%[\w ]*%/ig, '-');
                 }
-                output_string = output_string.replace(/%[\w ]*%/ig, '-');
                 return output_string;
             }
             $(document).ready(function () {

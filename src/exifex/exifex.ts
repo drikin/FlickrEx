@@ -41,7 +41,9 @@ module com.drikin.ExifEx {
             output_string = null;
         }
         // replace non exsisting Exif infos
-        output_string = output_string.replace(/%[\w ]*%/ig, '-');
+        else {
+            output_string = output_string.replace(/%[\w ]*%/ig, '-');
+        }
         return output_string;
     }
 
