@@ -15,9 +15,9 @@ You can just copy & paste HTML code below in your blog/web site and it should wo
     //var FLICKREX_EXIF_FORMAT = "%camera% / %Focal Length% / f/%aperture% / ISO %ISO Speed% / %Exposure% sec / %Exposure Bias% EV / %Software%";
     //var FLICKREX_EXIF_JQUERY_SELECTOR = "#content img";
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="//github.com/drikin/FlickrEx/raw/stable/flickrex.min.js"></script>
-<script src="//github.com/drikin/FlickrEx/raw/stable/exifex.min.js"></script>
+<script>(window.jQuery && parseFloat(window.jQuery().jquery) > 1.5) || document.write('<script src="//flickrex.drikin.com/stable/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+<script src="//flickrex.drikin.com/stable/flickrex.min.js"></script>
+<script src="//flickrex.drikin.com/stable/exifex.min.js"></script>
 ```
 
 NOTE: Seemingly, this code is using global variables. However, inside FlickrEx javascript code, these variables' namescope is correctly modified, so that these global variables won't violate other stuff at all. It makes the snippet code more clean.
