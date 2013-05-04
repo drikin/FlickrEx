@@ -48,7 +48,7 @@ module com.drikin.ExifEx {
     }
 
     // start from here
-    $(document).ready(() => {
+    jQuery(document).ready(() => {
         var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
 
         for (var i = 0, l = flickr_imgs.length; i < l; i++) {
@@ -57,8 +57,8 @@ module com.drikin.ExifEx {
                 flickrex.getExif(flickr_imgs[i].id, (exif_data) => {
                     var exif_string = makeExifString(exif_data);
                     if (exif_string) {
-                        var p = $("<div class='flickr-exif'>" + exif_string + "</div>");
-                        $(flickr_img.node).after(p);
+                        var p = jQuery("<div class='flickr-exif'>" + exif_string + "</div>");
+                        jQuery(flickr_img.node).after(p);
                     }
                 });
             })();
