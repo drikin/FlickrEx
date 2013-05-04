@@ -118,7 +118,7 @@ var com;
                 'exposure': ExifExposure,
                 'iso speed': ExifISO
             };
-            $(document).ready(function () {
+            jQuery(document).ready(function () {
                 var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
                 for(var i = 0, l = flickr_imgs.length; i < l; i++) {
                     (function () {
@@ -155,11 +155,11 @@ var com;
                     }
                 }
                 if(exif_string) {
-                    var _node = $(flickr_img.node);
+                    var _node = jQuery(flickr_img.node);
                     var width = _node.width() + parseInt(_node.css('border-left-width'), 10) + parseInt(_node.css('border-right-width'), 10) + parseInt(_node.css('margin-left'), 10) + parseInt(_node.css('margin-right'), 10) + parseInt(_node.css('padding-left'), 10) + parseInt(_node.css('padding-right'), 10);
-                    var p = $("<div class='" + container_class + "' style='width:" + width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
-                    $(flickr_img.node).before(p);
-                    $(flickr_img.node).parent().addClass('flickr-exif-container');
+                    var p = jQuery("<div class='" + container_class + "' style='width:" + width + "px'><div class='" + container_class + "-block'>" + exif_string + "</div></div>");
+                    jQuery(flickr_img.node).before(p);
+                    jQuery(flickr_img.node).parent().addClass('flickr-exif-container');
                 }
             }
             ;
