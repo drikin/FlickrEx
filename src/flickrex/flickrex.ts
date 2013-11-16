@@ -76,7 +76,7 @@ module com.drikin.FlickrEx {
             return obj;
         } // }}}
 
-        public getAllFlickrImageObjects(jquery_selector?: string = 'img') {
+        public getAllFlickrImageObjects(jquery_selector: string = 'img') {
             var imgs = jQuery(jquery_selector).filter(function(idx) {
                 var src_str = jQuery(this).attr('src');
                 var original_str = jQuery(this).attr('data-original');
