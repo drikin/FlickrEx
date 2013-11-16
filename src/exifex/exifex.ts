@@ -47,8 +47,7 @@ module com.drikin.ExifEx {
         return output_string;
     }
 
-    // start from here
-    jQuery(document).ready(() => {
+    export function init() {
         var flickr_imgs = flickrex.getAllFlickrImageObjects(exif_jquery_selector);
 
         for (var i = 0, l = flickr_imgs.length; i < l; i++) {
@@ -63,5 +62,10 @@ module com.drikin.ExifEx {
                 });
             })();
         }
+    }
+
+    // start from here
+    jQuery(document).ready(() => {
+        init();
     });
 }
