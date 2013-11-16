@@ -4,7 +4,7 @@
 rm *.js;
 
 # 2. compile ts files
-find src -name "*.ts" -exec tsc {} \;
+find src -name "*.ts" -exec ./node_modules/typescript/bin/tsc {} \;
 
 # 3. move js files to top dir
 find src -name "*.js" -exec mv {} . \;
