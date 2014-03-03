@@ -38,7 +38,6 @@ var com;
                     var host_name = url_elems[2];
 
                     if (host_name.match(/^c/)) {
-                        console.log(host_name);
                         var farm_id = url_elems[3];
                         var server_id = url_elems[4];
                         var url_last_components = url_elems[5].split('_');
@@ -68,7 +67,8 @@ var com;
                         size: size,
                         file_ext: file_ext
                     };
-                    console.log(obj);
+
+                    //console.log(node);
                     return obj;
                 };
 
