@@ -48,9 +48,17 @@ module com.drikin.FlickrEx {
         private parseFlickrImageURL(node: any): FlickrURLObj { // {{{
             var url_string = jQuery(node).attr('data-original') || jQuery(node).attr('data-lazy-src') || jQuery(node).attr('src');
             var url_elems = url_string.split('/');
-            var farm_id = url_elems[2].split('.').slice(0, 1)[0].replace('farm', '');
-            var server_id = url_elems[3];
-            var url_last_components = url_elems[4].split('_');
+            var host_name = url_elems[2];
+            // workaround for c<num> based url e.g. http://c<num>.staticflickr.com/{farm-id}/{server-id}/{id}_{secret}.jpg
+            if (host_name.match(/^c/)) {
+                var farm_id = url_elems[3];
+                var server_id = url_elems[4];
+                var url_last_components = url_elems[5].split('_');
+            } else {
+                var farm_id = host_name.split('.').slice(0, 1)[0].replace('farm', '');
+                var server_id = url_elems[3];
+                var url_last_components = url_elems[4].split('_');
+            }
             var id = url_last_components.slice(0, 1)[0];
             var secret = url_last_components.slice(1, 2)[0];
             var secret = url_last_components.slice(1, 2)[0];
