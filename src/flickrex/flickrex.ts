@@ -51,7 +51,6 @@ module com.drikin.FlickrEx {
             var host_name = url_elems[2];
             // workaround for c<num> based url e.g. http://c<num>.staticflickr.com/{farm-id}/{server-id}/{id}_{secret}.jpg
             if (host_name.match(/^c/)) {
-                console.log(host_name);
                 var farm_id = url_elems[3];
                 var server_id = url_elems[4];
                 var url_last_components = url_elems[5].split('_');
