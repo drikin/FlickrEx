@@ -1,30 +1,28 @@
 var com;
 (function (com) {
     (function (drikin) {
+        /// <reference path="../../typings/jquery.d.ts" />
         (function (FlickrEx) {
             var Base = (function () {
                 function Base() {
                     this.api_key = "18c9f79a96fd34c3b3f16a93fb0a5d3c";
                     this.api_type = "json&nojsoncallback=1";
                     this.base_url = "http://api.flickr.com/services/rest/?";
-                    if(window.FLICKREX_API_KEY !== undefined) {
+                    if (window.FLICKREX_API_KEY !== undefined) {
                         this.api_key = window.FLICKREX_API_KEY;
                         delete window.FLICKREX_API_KEY;
                     }
-                    this.base_url = this.appendURLParams({
-                        api_key: this.api_key
-                    });
-                    this.base_url = this.appendURLParams({
-                        format: this.api_type
-                    });
+                    this.base_url = this.appendURLParams({ api_key: this.api_key });
+                    this.base_url = this.appendURLParams({ format: this.api_type });
                 }
                 Base.prototype.appendURLParams = function (params) {
                     var return_url = this.base_url;
-                    for(var key in params) {
+                    for (var key in params) {
                         return_url += "&" + key + "=" + params[key];
                     }
                     return return_url;
                 };
+
                 Base.prototype.getJsonResult = function (request_url, callback) {
                     jQuery.ajax(request_url, {
                         success: function (data) {
@@ -33,22 +31,33 @@ var com;
                         dataType: 'json'
                     });
                 };
+
                 Base.prototype.parseFlickrImageURL = function (node) {
                     var url_string = jQuery(node).attr('data-original') || jQuery(node).attr('data-lazy-src') || jQuery(node).attr('src');
                     var url_elems = url_string.split('/');
-                    var farm_id = url_elems[2].split('.').slice(0, 1)[0].replace('farm', '');
-                    var server_id = url_elems[3];
-                    var url_last_components = url_elems[4].split('_');
+                    var host_name = url_elems[2];
+
+                    if (host_name.match(/^c/)) {
+                        console.log(host_name);
+                        var farm_id = url_elems[3];
+                        var server_id = url_elems[4];
+                        var url_last_components = url_elems[5].split('_');
+                    } else {
+                        var farm_id = host_name.split('.').slice(0, 1)[0].replace('farm', '');
+                        var server_id = url_elems[3];
+                        var url_last_components = url_elems[4].split('_');
+                    }
                     var id = url_last_components.slice(0, 1)[0];
                     var secret = url_last_components.slice(1, 2)[0];
                     var secret = url_last_components.slice(1, 2)[0];
                     var size_info = url_last_components.slice(2, 3);
-                    if(size_info.length) {
+                    if (size_info.length) {
                         var size = size_info.length && size_info[0].split('.').slice(0, 1)[0];
                     } else {
                         var size = '';
                     }
                     var file_ext = url_elems.slice(-1)[0].split('.').slice(-1)[0];
+
                     var obj = {
                         node: node,
                         url_string: url_string,
@@ -59,8 +68,10 @@ var com;
                         size: size,
                         file_ext: file_ext
                     };
+                    console.log(obj);
                     return obj;
                 };
+
                 Base.prototype.getAllFlickrImageObjects = function (jquery_selector) {
                     if (typeof jquery_selector === "undefined") { jquery_selector = 'img'; }
                     var imgs = jQuery(jquery_selector).filter(function (idx) {
@@ -70,11 +81,12 @@ var com;
                         return (src_str && src_str.match(/static.?flickr.com/) || original_str && original_str.match(/static.?flickr.com/) || lazy_src_str && lazy_src_str.match(/static.?flickr.com/));
                     });
                     var objs = [];
-                    for(var i = 0, l = imgs.length; i < l; i++) {
+                    for (var i = 0, l = imgs.length; i < l; i++) {
                         objs.push(this.parseFlickrImageURL(imgs[i]));
                     }
                     return objs;
                 };
+
                 Base.prototype.getExif = function (photo_id, callback) {
                     var request_url = this.appendURLParams({
                         method: "flickr.photos.getExif",
@@ -82,15 +94,14 @@ var com;
                     });
                     this.getJsonResult(request_url, callback);
                 };
+
                 Base.prototype.getRecentURL = function (callback) {
-                    var request_url = this.appendURLParams({
-                        method: "flickr.photos.getRecent"
-                    });
+                    var request_url = this.appendURLParams({ method: "flickr.photos.getRecent" });
                     this.getJsonResult(request_url, callback);
                 };
                 return Base;
             })();
-            FlickrEx.Base = Base;            
+            FlickrEx.Base = Base;
         })(drikin.FlickrEx || (drikin.FlickrEx = {}));
         var FlickrEx = drikin.FlickrEx;
     })(com.drikin || (com.drikin = {}));
