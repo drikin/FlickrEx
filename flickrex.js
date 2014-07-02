@@ -7,7 +7,7 @@ var com;
                 function Base() {
                     this.api_key = "18c9f79a96fd34c3b3f16a93fb0a5d3c";
                     this.api_type = "json&nojsoncallback=1";
-                    this.base_url = "http://api.flickr.com/services/rest/?";
+                    this.base_url = "https://api.flickr.com/services/rest/?";
                     if (window.FLICKREX_API_KEY !== undefined) {
                         this.api_key = window.FLICKREX_API_KEY;
                         delete window.FLICKREX_API_KEY;

@@ -17,7 +17,7 @@ module com.drikin.FlickrEx {
     export class Base {
         api_key:  string = "18c9f79a96fd34c3b3f16a93fb0a5d3c"; // default key
         api_type: string = "json&nojsoncallback=1"; // only support json format
-        base_url: string = "http://api.flickr.com/services/rest/?";
+        base_url: string = "https://api.flickr.com/services/rest/?";
 
         constructor() {
             if (window.FLICKREX_API_KEY !== undefined) {
