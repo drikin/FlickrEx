@@ -17,9 +17,9 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
     //var FLICKREX_EXIF_FORMAT = "%camera% / %Focal Length% / f/%aperture% / ISO %ISO Speed% / %Exposure% sec / %Exposure Bias% EV / %Software%";
     //var FLICKREX_EXIF_JQUERY_SELECTOR = "#content img";
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="//github.com/drikin/FlickrEx/raw/stable/flickrex.min.js"></script>
-<script src="//github.com/drikin/FlickrEx/raw/stable/exifex.min.js"></script>
+<script>(window.jQuery && parseFloat(window.jQuery().jquery) > 1.5) || document.write('<script src="//flickrex.drikin.com/stable/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+<script src="//flickrex.drikin.com/stable/flickrex.min.js"></script>
+<script src="//flickrex.drikin.com/stable/exifex.min.js"></script>
 ```
 
 注) 上記テンプレートは一見グローバル変数を利用しているように見えますが、実際にはFlickrExのスクリプト内でネームスコープを変更しているのでグローバル変数が残ることはありません。テンプレートの見た目を優先して上記のような仕様にしました。
@@ -33,37 +33,12 @@ FlickrEx自体はプラグイン的に必要な機能を選んで利用するこ
 - %camera%
 - %Make%
 - %Model%
-- %Orientation%
-- %Resolution Unit%
 - %Software%
-- %Date and Time (Modified)%
-- %Date and Time (Original)%
-- %Date and Time (Digitized)%
-- %White Point%
 - %Exposure%
 - %Aperture%
-- %Exposure Program%
 - %ISO Speed%
-- %Exif Version%
-- %Brightness Value%
-- %Exposure Bias%
-- %Max Aperture Value%
-- %Metering Mode%
-- %Light Source%
-- %Flash%
 - %Focal Length%
 - %Focal Length (35mm format)%
-- %Color Space%
-- %Exposure Mode%
-- %White Balance%
-- %Scene Capture Type%
-- %Contrast%
-- %Saturation%
-- %Sharpness%
-- %Lens Info%
-- %Lens Model%
-- %Lens%
-- %Gamma%
 
 See more detail
 > http://www.flickr.com/services/api/explore/flickr.photos.getExif
